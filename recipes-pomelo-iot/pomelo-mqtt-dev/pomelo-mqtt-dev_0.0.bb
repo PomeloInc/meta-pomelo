@@ -1,10 +1,10 @@
 SUMMARY = "MQTT-Client"
 SECTION = "pomelo"
 DESCRIPTION = "Recipe for pomelo MQTT client"
-SRC_URI = "https://github.com/PomeloInc/meta-pomelo.git;protocol=http;branch=dev"
-SRCREV = "${AUTOREV}"
-# PV = "1.0+git${SRCPV}"
 RDEPENDS_${PN} = "python3 python3-paho-mqtt"
+SRC_URI = "https://github.com/PomeloInc/mqtt-client.git;protocol=http;branch=dev"
+SRCREV = "${AUTOREV}"
+PV = "1.0+git${SRCPV}"
 S = "${WORKDIR}/mqtt-client-dev"
 LICENSE = "CLOSED"
 BB_STRICT_CHECKSUM = "0"
@@ -19,7 +19,6 @@ python do_display_banner() {
     bb.plain("*                                             *");
     bb.plain("***********************************************");
 }
-
 addtask display_banner before do_build
 
 do_install () {
