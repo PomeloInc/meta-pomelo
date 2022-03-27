@@ -1,0 +1,8 @@
+[Unit]
+Description=Pomelo MQTT server
+
+[Service]
+ExecStart=/usr/bin/hello
+
+[Install]
+WantedBy=multi-user.target
