@@ -33,7 +33,7 @@ addtask display_banner before do_build
 # Install App
 do_install(){
   install -d ${D}/${bindir}/pomelo-iot/mqtt-client-dev
-   cp -r ${S}/* ${D}/${bindir}/pomelo-iot/mqtt-client-dev
+   cp -r ${S}/* ${D}/${bindir}/pomelo-iot/mqtt-client-dev/
 }
 
 # Install Systemd
