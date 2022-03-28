@@ -1,8 +1,8 @@
 [Unit]
-Description=Pomelo MQTT server
+Description=Pomelo MQTT Client Service
 
 [Service]
-ExecStart=/usr/bin/hello
+ExecStart=/usr/bin/python3 /usr/bin/pomelo-iot/mqtt-client-dev/mqtt-app.py
 
 [Install]
 WantedBy=multi-user.target

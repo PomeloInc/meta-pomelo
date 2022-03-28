@@ -10,15 +10,15 @@ PV = "0.0+gitr${SRCPV}"
 S = "${WORKDIR}/git"
 LICENSE = "CLOSED"
 BB_STRICT_CHECKSUM = "0"
-POMELO-IOT = "${D}/${bindir}/pomelo-iot/mqtt-client-dev"
+POMELO-IOT = "${D}/${bindir}/pomelo-iot/mqtt-client"
 
 # Systemd configuration
 inherit systemd
-SRC_URI_append = " file://${SERVICE_NAME}"
 SERVICE_NAME = "pomelo-mqtt-dev.service"
+SRC_URI_append = " file://${SERVICE_NAME}"
 SYSTEMD_AUTO_ENABLE = "enable"
 SYSTEMD_SERVICE_${PN} = "pomelo-mqtt-dev.service"
-FILES_${PN} += "${systemd_unitdir}/system/${SERVICE_NAME}"
+FILES_${PN} += "${systemd_unitdir}/system/pomelo-mqtt-dev.service"
 
 python do_display_banner() {
     bb.plain("***********************************************");
@@ -30,11 +30,13 @@ python do_display_banner() {
 
 addtask display_banner before do_build
 
+# Install App
 do_install(){
   install -d ${D}/${bindir}/pomelo-iot/mqtt-client-dev
-  cp -r ${D}/${bindir}/pomelo-iot/mqtt-client-dev ${D}/${bindir}/pomelo-iot/mqtt-client
+   cp -r ${S}/* ${D}/${bindir}/pomelo-iot/mqtt-client-dev
 }
 
+# Install Systemd
 do_install_append () {
   install -d ${D}/${systemd_unitdir}/system
   install -m 0644 ${WORKDIR}/pomelo-mqtt-dev.service ${D}/${systemd_unitdir}/system/
