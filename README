@@ -1,19 +1,22 @@
-This README file contains information on the contents of the meta-pomelo layer.
-
-Please see the corresponding sections below for details.
+Switch to branch "dunfell" for latest Release 
 
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
+  URI: meta-openembedded
+  branch: dunfell
 
-  URI: <second dependency>
-  branch: <branch name>
+  URI: poky
+  branch: dunfell
 
-  .
-  .
-  .
+  URI: meta-openembedded
+  branch: dunfell
+  
+  URI: meta-openembedded
+  branch: dunfell
+  
+  URI: meta-openembedded
+  branch: dunfell
 
 Patches
 =======
